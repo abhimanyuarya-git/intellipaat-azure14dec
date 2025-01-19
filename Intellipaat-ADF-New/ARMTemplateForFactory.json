@@ -223,6 +223,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"description": "This pipeline is created to validate whether the file is present or not, if the file is present , then ignore, else copy the file.",
 				"activities": [
 					{
 						"name": "check_File_Existence",
