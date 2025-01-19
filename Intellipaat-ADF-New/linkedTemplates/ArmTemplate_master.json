@@ -1,0 +1,132 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "Intellipaat-ADF-New"
+		},
+		"LS_adls2_innovantracrm_storage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_adls2_innovantracrm_storage'"
+		},
+		"LS_dataeng14dec_sources_qldb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_dataeng14dec_sources_qldb'"
+		},
+		"lS_dataeng14dec_target_sqldb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'lS_dataeng14dec_target_sqldb'"
+		},
+		"LS_adls2_innovantracrm_storage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://innovantracrm.dfs.core.windows.net/"
+		},
+		"LS_dataeng14dec_sources_qldb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "dataeng14decsourcesqldb.database.windows.net"
+		},
+		"LS_dataeng14dec_sources_qldb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "dataeng-14decsourcesqldb"
+		},
+		"LS_dataeng14dec_sources_qldb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladmin"
+		},
+		"lS_dataeng14dec_target_sqldb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "dataeng14dectargetsqldb.database.windows.net"
+		},
+		"lS_dataeng14dec_target_sqldb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "dataeng14dec-target-sqldb"
+		},
+		"lS_dataeng14dec_target_sqldb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladmin"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "Intellipaat-ADF-New_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_adls2_innovantracrm_storage_accountKey": {
+						"value": "[parameters('LS_adls2_innovantracrm_storage_accountKey')]"
+					},
+					"LS_dataeng14dec_sources_qldb_password": {
+						"value": "[parameters('LS_dataeng14dec_sources_qldb_password')]"
+					},
+					"lS_dataeng14dec_target_sqldb_password": {
+						"value": "[parameters('lS_dataeng14dec_target_sqldb_password')]"
+					},
+					"LS_adls2_innovantracrm_storage_properties_typeProperties_url": {
+						"value": "[parameters('LS_adls2_innovantracrm_storage_properties_typeProperties_url')]"
+					},
+					"LS_dataeng14dec_sources_qldb_properties_typeProperties_server": {
+						"value": "[parameters('LS_dataeng14dec_sources_qldb_properties_typeProperties_server')]"
+					},
+					"LS_dataeng14dec_sources_qldb_properties_typeProperties_database": {
+						"value": "[parameters('LS_dataeng14dec_sources_qldb_properties_typeProperties_database')]"
+					},
+					"LS_dataeng14dec_sources_qldb_properties_typeProperties_userName": {
+						"value": "[parameters('LS_dataeng14dec_sources_qldb_properties_typeProperties_userName')]"
+					},
+					"lS_dataeng14dec_target_sqldb_properties_typeProperties_server": {
+						"value": "[parameters('lS_dataeng14dec_target_sqldb_properties_typeProperties_server')]"
+					},
+					"lS_dataeng14dec_target_sqldb_properties_typeProperties_database": {
+						"value": "[parameters('lS_dataeng14dec_target_sqldb_properties_typeProperties_database')]"
+					},
+					"lS_dataeng14dec_target_sqldb_properties_typeProperties_userName": {
+						"value": "[parameters('lS_dataeng14dec_target_sqldb_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "Intellipaat-ADF-New_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'Intellipaat-ADF-New_ArmTemplate_0')]"
+			]
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Intellipaat-ADF-New"
+		},
+		"LS_adls2_innovantracrm_storage_accountKey": {
+			"value": ""
+		},
+		"LS_dataeng14dec_sources_qldb_password": {
+			"value": ""
+		},
+		"lS_dataeng14dec_target_sqldb_password": {
+			"value": ""
+		},
+		"LS_adls2_innovantracrm_storage_properties_typeProperties_url": {
+			"value": "https://innovantracrm.dfs.core.windows.net/"
+		},
+		"LS_dataeng14dec_sources_qldb_properties_typeProperties_server": {
+			"value": "dataeng14decsourcesqldb.database.windows.net"
+		},
+		"LS_dataeng14dec_sources_qldb_properties_typeProperties_database": {
+			"value": "dataeng-14decsourcesqldb"
+		},
+		"LS_dataeng14dec_sources_qldb_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		},
+		"lS_dataeng14dec_target_sqldb_properties_typeProperties_server": {
+			"value": "dataeng14dectargetsqldb.database.windows.net"
+		},
+		"lS_dataeng14dec_target_sqldb_properties_typeProperties_database": {
+			"value": "dataeng14dec-target-sqldb"
+		},
+		"lS_dataeng14dec_target_sqldb_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		}
+	}
+}
