@@ -1,0 +1,9 @@
+{
+	"name": "Intellipaat-ADF-New",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cad62d50-d93f-401a-8c21-ff26aae26d66",
+		"tenantId": "ff7d1b0f-e228-4f90-9981-82b79cba0020"
+	}
+}

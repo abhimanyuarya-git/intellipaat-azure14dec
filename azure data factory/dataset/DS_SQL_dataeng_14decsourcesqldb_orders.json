@@ -1,0 +1,20 @@
+{
+	"name": "DS_SQL_dataeng_14decsourcesqldb_orders",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_dataeng14dec_sources_qldb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SQL DB Datasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "orders"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

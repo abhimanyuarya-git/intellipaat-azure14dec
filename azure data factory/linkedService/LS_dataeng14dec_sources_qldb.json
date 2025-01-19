@@ -1,0 +1,21 @@
+{
+	"name": "LS_dataeng14dec_sources_qldb",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "dataeng14decsourcesqldb.database.windows.net",
+			"database": "dataeng-14decsourcesqldb",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sqladmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDY5RTg0QkJDLTZBMDktNDc5NS05Q0NGLUYwQjJBRDJBOUZCQl8xNmZkMGFmNi1hNDZkLTQxNDEtOWIyMy1kYzQ0ZDZmMGEzNTEiDQp9"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
